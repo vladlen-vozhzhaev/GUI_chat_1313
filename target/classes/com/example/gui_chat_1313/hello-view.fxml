@@ -2,16 +2,20 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-
-<VBox alignment="CENTER" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.2" fx:controller="com.example.gui_chat_1313.HelloController">
+<VBox alignment="CENTER" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gui_chat_1313.HelloController">
    <children>
-      <TextArea editable="false" fx:id="textArea" prefHeight="375" prefWidth="300.0" />
+      <TextArea fx:id="textArea" editable="false" prefHeight="350" prefWidth="300.0">
+         <font>
+            <Font name="Roboto Light" size="14.0" />
+         </font></TextArea>
       <HBox prefHeight="25" prefWidth="300">
          <children>
-            <TextField onAction="#handlerSend" prefWidth="225" fx:id="textField"/>
-            <Button onAction="#handlerSend" mnemonicParsing="false" text="Отправить" prefWidth="75"/>
+            <TextField fx:id="textField" onAction="#handlerSend" prefWidth="225" />
+            <Button fx:id="sendBtn" disable="true" mnemonicParsing="false" onAction="#handlerSend" prefWidth="75" style="-fx-background-color: #0000FF;" text="Отправить" textFill="WHITE" />
          </children>
       </HBox>
+      <Button fx:id="connectBtn" mnemonicParsing="false" onAction="#connect" prefWidth="Infinity" style="-fx-background-color: #7CFC00;" text="Подключиться" />
    </children>
 </VBox>
